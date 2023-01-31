@@ -1,12 +1,13 @@
 #include <iostream>
 #include<stack>
 #include<string>
-
 #include"stack.h"
 
 using namespace std;
 
 
+char get_command();
+bool do_command(char, Stack &);
 
 int main()
 /*
@@ -18,8 +19,8 @@ Uses: The class Stack and the functions
 
 {
    Stack stored_numbers;
-   introduction();
-   instructions();
+   //introduction();
+   //instructions();
    while (do_command(get_command(), stored_numbers));
 }
 
@@ -101,3 +102,5 @@ Uses: The class Stack.
    }
    return true;
 }
+
+

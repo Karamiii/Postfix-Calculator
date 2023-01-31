@@ -1,11 +1,13 @@
 #pragma once
 
 typedef double Stack_entry;
-const int maxstack = 100;   //  small value for testing
+const int maxstack = 5;   //  small value for testing
 enum Error_code { success, underflow, overflow };
+
 
 class Stack {
 public:
+
    Stack();
    bool empty() const;
    Error_code pop();
