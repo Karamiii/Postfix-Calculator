@@ -1,29 +1,20 @@
 #include <iostream>
-#include<stack>
-#include<string>
-#include"stack.h"
+#include <string>
+#include"../headers/stack.h"
+
 
 using namespace std;
 
 
-char get_command();
-bool do_command(char, Stack &);
 
-int main()
-/*
-Post: The program has executed simple arithmetic
-      commands entered by the user.
-Uses: The class Stack and the functions
-      introduction, instructions, do_command, and get_command.
-*/
-
-{
-   Stack stored_numbers;
-   //introduction();
-   //instructions();
-   while (do_command(get_command(), stored_numbers));
+void introduction() {
+    // TODO
 }
+void instructions() {
 
+    //TODO
+
+}
 
 char get_command()
 {
@@ -102,5 +93,4 @@ Uses: The class Stack.
    }
    return true;
 }
-
 
