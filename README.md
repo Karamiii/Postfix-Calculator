@@ -32,7 +32,7 @@ You can find the following features from my implementation:
 
 ## Implementation
 
-The PostFix Calculator is built with an array that mimics a stack behaviour. The calculator uses postfix notation, which is a way of writing math problems where the operator (e.g. +, -, *, /) comes after the numbers being operated on (e.g. 2 2 + instead of 2 + 2). 
+This program is a stack-like implementation in C++, which uses an array to mimic the stack features. 
 
 
 ## Compilint the program
