@@ -1,44 +1,57 @@
 #include <iostream>
 #include <string>
 #include"../headers/stack.h"
+#include<stack>
+#include<cmath>
+#include <cctype>
+#include<sstream>
+
 
 
 using namespace std;
 
 
-
-void introduction() {
-    // TODO
-}
 void instructions() {
 
-    //TODO
-
+    cout << "Welcome to the calculator program!" << endl;
+    cout << "To use the calculator, enter one of the following commands:" << endl;
+    cout << "? - push a number onto the stack" << endl;
+    cout << "= - print the top number on the stack" << endl;
+    cout << "+ - add the top two numbers on the stack" << endl;
+    cout << "- - subtract the top two numbers on the stack" << endl;
+    cout << "* - multiply the top two numbers on the stack" << endl;
+    cout << "/ - divide the top two numbers on the stack" << endl;
+    cout << "s - sum all the numbers on the stack and push the result" << endl;
+    cout << "a - calculate the average of all the numbers on the stack and push the result" << endl;
+    cout << "x - swap the top two numbers on the stack" << endl;
+    cout << "q - quit the program" << endl << endl;
 }
 
 
+// Get a command from the user
 char get_command()
 {
-   char command;
-   bool waiting = true;
-   cout << "Select command and press <Enter>:";
+    char command;
+    bool waiting = true;
+    cout << "Select command and press <Enter>:";
 
-   while (waiting) {
-      cin >> command;
-      command = tolower(command);
-      if (command == '?' || command == '=' || command == '+' ||
-          command == '-' || command == '*' || command == '/' ||
-          command == 'q' || command == 'x' || command == 's' || command == 'a')  waiting = false;
- 
+    while (waiting) {
 
-     else {
-         cout << "Please enter a valid command:" << endl
-             << "[?]push to stack   [=]print top" << endl
-             << "[+] [-] [*] [/] [x]  are arithmetic operations" << endl
-             << "[Q]uit." << endl;
-      }
-   }
-   return command;
+        cin >> command;
+        command = tolower(command);
+        if (command == '?' || command == '=' || command == '+' ||
+            command == '-' || command == '*' || command == '/' ||
+            command == 'q' || command == 'x' || command == 's' || command == 'a')  waiting = false;
+
+
+        else {
+            cout << "Please enter a valid command:" << endl
+                << "[?]push to stack   [=]print top" << endl
+                << "[+] [-] [*] [/] [x] [s] [a]  are arithmetic operations" << endl
+                << "[Q]uit." << endl;
+        }
+    }
+    return command;
 }
 
 
@@ -52,9 +65,10 @@ Uses: The class Stack.
 */
 
 {
-   double p, q;
-   switch (command) {
+    double p, q;
+    switch (command) {
     case '?':
+        // Add a value in the stack
         cout << "Enter a real number: " << flush;
         cin >> p;
         if (numbers.push(p) == overflow)
@@ -62,6 +76,7 @@ Uses: The class Stack.
         break;
 
     case '=':
+        // Show the top value in the stack
         if (numbers.top(p) == underflow)
             cout << "Stack empty" << endl;
         else
@@ -69,6 +84,7 @@ Uses: The class Stack.
         break;
 
     case '+':
+        // Add the top 2 numbers in the stack
         if (numbers.top(p) == underflow)
             cout << "Stack empty" << endl;
         else {
@@ -87,6 +103,7 @@ Uses: The class Stack.
         break;
 
     case 'a':
+        // Calculate the average of all the values in the stack
 
         if (numbers.top(p) == underflow)
             cout << "Stack empty" << endl;
@@ -109,7 +126,7 @@ Uses: The class Stack.
         break;
 
     case 's':
-
+        // Calculate the sum of all the values in the stack
         if (numbers.top(p) == underflow)
             cout << "Stack empty" << endl;
         else {
@@ -128,34 +145,38 @@ Uses: The class Stack.
         break;
 
     case 'x':
-
+        // Exchange the top 2 values in the stack
         if (numbers.top(p) == underflow)
             cout << "Stack empty" << endl;
         else {
-               double holder;
-               double holder2;
+            double holder;
+            double holder2;
 
-               numbers.top(holder);
-               numbers.pop();
-               if (numbers.top(holder2) == underflow) {
-                   cout << "Stack has just one entry" << endl;
-                   numbers.push(holder);
-               }
-               else {
-                   numbers.pop();
-                   numbers.push(holder);
-                   numbers.push(holder2);
-               }
-            
+            numbers.top(holder);
+            numbers.pop();
+            if (numbers.top(holder2) == underflow) {
+                cout << "Stack has just one entry" << endl;
+                numbers.push(holder);
+            }
+            else {
+                numbers.pop();
+                numbers.push(holder);
+                numbers.push(holder2);
+            }
+
         }
         break;
 
-        //   Add options for further user commands.
-
+        // Quit the program with a greeting
     case 'q':
         cout << "Calculation finished.\n";
+        cout << "Greetings from Karam :D" << endl;
         return false;
     }
     return true;
 }
+
+
+
+
 

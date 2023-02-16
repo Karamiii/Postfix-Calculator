@@ -13,9 +13,9 @@ More info on the functionality -> (https://en.wikipedia.org/wiki/Reverse_Polish_
 Karam Chafqane
 
 
-## Langueage
+## Language
 
-**C++/C**
+**C++**
 
 
 ## Features
