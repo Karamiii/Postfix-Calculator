@@ -82,6 +82,61 @@ Uses: The class Stack.
         else
             cout << p << endl;
         break;
+    case '/':
+        // Add the top 2 numbers in the stack
+        if (numbers.top(p) == underflow)
+            cout << "Stack empty" << endl;
+        else {
+            numbers.pop();
+            if (numbers.top(q) == underflow) {
+                cout << "Stack has just one entry" << endl;
+                numbers.push(p);
+            }
+
+            else {
+                numbers.pop();
+                if (numbers.push(q / p) == overflow)
+                    cout << "Warning: Stack full, lost result" << endl;
+            }
+        }
+        break;
+    case '*':
+        // Add the top 2 numbers in the stack
+        if (numbers.top(p) == underflow)
+            cout << "Stack empty" << endl;
+        else {
+            numbers.pop();
+            if (numbers.top(q) == underflow) {
+                cout << "Stack has just one entry" << endl;
+                numbers.push(p);
+            }
+
+            else {
+                numbers.pop();
+                if (numbers.push(q * p) == overflow)
+                    cout << "Warning: Stack full, lost result" << endl;
+            }
+        }
+        break;
+
+    case '-':
+        // Add the top 2 numbers in the stack
+        if (numbers.top(p) == underflow)
+            cout << "Stack empty" << endl;
+        else {
+            numbers.pop();
+            if (numbers.top(q) == underflow) {
+                cout << "Stack has just one entry" << endl;
+                numbers.push(p);
+            }
+
+            else {
+                numbers.pop();
+                if (numbers.push(q - p) == overflow)
+                    cout << "Warning: Stack full, lost result" << endl;
+            }
+        }
+        break;
 
     case '+':
         // Add the top 2 numbers in the stack

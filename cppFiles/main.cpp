@@ -24,16 +24,19 @@ Post: The program has executed simple arithmetic
 Uses: The class Stack and the functions
       introduction, instructions, do_command, and get_command.
 */
-
 {
+       // Check for the flag
       if (argc > 1 && strcmp(argv[1], "-p") == 0) {
-        instructionsSecondary();
-        secondary();
-      }
-      else {
         Stack stored_numbers;
         instructions();
         while (do_command(get_command(), stored_numbers));
+
+      }
+      else {
+        //instructionsSecondary();
+        while(true){
+        secondary();
+        }
       }
       return 0;
 
@@ -72,13 +75,13 @@ void secondary() {
                 num = 0; // Reset the number to zero for the next number
             }
         }
-        else if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == 'a' || ch == 's' || ch == 'x' || ch == '^' || ch == '%' || ch == 'v') {
+        else if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == 'a' || ch == 's' || ch == 'x' || ch == '^' || ch == '%' || ch == 'v' || ch == 'q') {
             // If the character is an operator, push it onto the opStack
             opStack.push(ch);
         }
         else {
             // If the character is not a digit, space, or operator, it is an invalid character
-            cerr << "Error: invalid character '" << ch << "'" << endl;
+            cerr << "Error: invalid character '" << ch << "'"  << endl << "Exiting program..."<< endl;
             exit(1);
         }
     }
@@ -110,8 +113,8 @@ void secondary() {
     }
 
     // Output the final result
-    cout << "result: " << numStack2.top() << endl;
-    exit(0);
+    cout << "result: " << numStack2.top() << endl << endl;
+
 }
 
 
@@ -224,9 +227,18 @@ void calculate(stack<double>& numStack2, stack<char>& opStack2) {
         numStack2.pop();
         sum = sqrt(value1);
         numStack2.push(sum);
+        break;
 
+    case 'q':
+        cout << "Bye bye :( " << endl;
+        cout << "Greetings from Karam :)" << endl;
+        exit(0);
 
     }
+
+
+
+
 }
 
 
