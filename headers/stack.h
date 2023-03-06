@@ -1,7 +1,7 @@
 #pragma once
 
 typedef double Stack_entry;
-const int maxstack = 7;   //  small value for testing
+const int maxstack = 10;   //  small value for testing
 enum Error_code { success, underflow, overflow };
 
 

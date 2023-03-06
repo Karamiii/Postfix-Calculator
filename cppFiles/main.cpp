@@ -33,7 +33,7 @@ Uses: The class Stack and the functions
 
       }
       else {
-        //instructionsSecondary();
+        instructionsSecondary();
         while(true){
         secondary();
         }

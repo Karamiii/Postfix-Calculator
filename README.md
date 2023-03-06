@@ -1,7 +1,6 @@
 # Postfix Calculator
 
-This was done as a course project for data structures and algorithms course.
-Hello dear teacher, please don't be too harsh :( 
+This was done as a project for data structures and algorithms course.
 
 A postfix calculator is a simple arithmetic calculator that uses postfix notation, to perform mathematical operations. The calculator uses postfix notation, which is a way of writing math problems where the operator (e.g. +, -, *, /) comes after the numbers being operated on (e.g. 2 2 + instead of 2 + 2).
 
@@ -32,7 +31,7 @@ You can find the following features from my implementation:
 
 ## Implementation
 
-This program is a stack-like implementation in C++, which uses an array to mimic the stack features. 
+This program is a stack-like implementation in C++, which uses an array to mimic the stack features.
 
 
 ## Compilint the program
